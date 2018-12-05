@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 * 内边距:
+			 * 内填充,padding,当盒子加了内边距后,会撑大盒子的尺寸,如果不希望原始尺寸发生
+			 * 变化,相应的把内边距撑出的尺寸从宽高减去
+			 * 
+			 * 盒子的尺寸=自身的宽高+内边距+边框
+			 * 
+			 * padding属性:
+			 *
+			 */
+			.box{
+				width: 190px;
+				height: 190px;
+				background: pink;
+				padding-left:10px;
+				padding-top:10px;
+				/*border-left:10px solid red;
+				border-top:10px solid red;*/
+			}
+			.phone{
+				width: 50px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="phone">手机</div>
+		</div>
+	</body>
+</html>
