@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单</title>
+	<style type="text/css">
+		.body{
+
+			/*设置整体的背景图以及边框*/
+
+			/*margin: 0 auto;*/
+			width:960px;
+			height: 760px;
+			background: url(../images/chun.jpg);
+			text-align: center;
+		}
+
+		.butto{
+
+			/*设置按钮的样式*/
+			width:100px;
+			height: 30px;
+			background:skyblue;
+			text-decoration: none;
+		}
+		.butto:hover{
+
+			/*设置按钮联动样式*/
+
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="body">
+
+		<!-- form 表单域，包含想要提交的内容
+			属性：action	 提交地址（网址）
+				  method 提交方式  get post -->
+				  
+		<form action="" method="get">
+					<label for="s1">姓名：</label>
+					<input type="text" id="s1"><br><br>
+
+					<label for="sm">密码：</label>
+					<input type="password" id="sm"><br><br>
+
+					<span>性别：</span>
+					<input type="radio" id="snn" name="sn" checked="checked"><label for="snn">男</label>
+					<input type="radio" id="snm" name="sn"><label for="snm">女</label> <br><br>
+
+					<span>性格：</span>
+					<input type="checkbox" id="xx"><label for="xx">学习</label>
+					<input type="checkbox" id="yd"><label for="yd">运动</label>
+					<input type="checkbox" id="dl"><label for="dl">锻炼</label>
+					<input type="checkbox" id="sh" =""><label for="sh">生活</label> <br><br>
+
+					<span>爱好：</span>
+					<select>
+						<option selected="selected">篮球</option>
+						<option>足球</option>
+						<option>排球</option>
+						<option>羽毛球</option>
+						<option>铁球</option>
+					</select><br><br>
+
+					<span>自我介绍</span>
+					<textarea></textarea><br><br>
+
+					<button class="butto" type="button">普通按钮</button>
+					<button class="butto" type="submit">提交按钮</button>
+					<button class="butto" type="reset">初始化</button>
+		</form>
+	</div>
+</body>
+</html>

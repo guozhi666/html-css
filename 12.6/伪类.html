@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>伪类</title>
+	<style type="text/css">
+		a{
+			font-size: 40px;
+		}
+
+		/*四种状态不能混合，不然会找造成css层叠覆盖*/
+		/*link  visited  hover  active   lvha*/  
+
+		a:link{
+			color: red;			/*初始状态*/
+		}
+		a:visited{
+			color: green;		/*点击后状态*/
+		}
+		a:hover{
+			color:gray;			/*鼠标滑过状态*/
+		}
+		a:active{
+			color: yellow;		/*点击状态*/
+		}
+	</style>
+</head>
+<body>
+	<a href="##">超链接</a>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>复合属性之border</title>
+	<style type="text/css">
+		.s1{
+			padding: 50px 0 0 0;
+			width:500px;			/*设置整体框架大小、颜色、边框宽度，内部块居中*/
+			height: 500px;
+			border-width: 20px;
+			/*border-color: blue;*/
+			border-style: solid;
+			border-color: blue;
+			text-align:center;
+
+			/*调用图片当做背景色，并不平铺，图片位置靠右*/
+			background: url(../12.5/images/chun.jpg) no-repeat;
+			background-position: right;
+		}
+		.s2{
+			
+
+
+			/*设置内部框大小和背景图片，不平铺，并转换为行内块。*/
+			width: 180px;
+			height: 180px;
+			background: url(../images/liuzhiyuan.jpg) no-repeat;
+			background-position: center 1px;
+			/*float:right;*/
+			/*text-align: center;*/
+			display: inline-block;
+
+
+			
+			border-width: 10px;
+			border-color: yellow;
+			border-style: solid;
+			/*border-color: blue;*/
+
+			/*border-left:solid ;
+			border-top:dashed;
+			border-right: dotted;
+			border-width: 5px;
+			border-color: blue;*/
+			/*border-bottom: yellow;*/
+		}
+		/*.chun{
+			width: 200px;
+			display:block;
+
+		}*/
+		.sel{
+			/*设置字体的大小，粗细和字体。*/
+			font-size:40px;
+			font-weight: 700;
+			font-family: "宋体"
+		}
+	</style>
+</head>
+<body>
+	<div class="s1">
+		<div class="s2"></div>
+		<!-- <img src="../12.5/images/chun.jpg" class="chun"> -->
+		<br><br>
+		<div class="sel">老刘</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+fout属性设置复合属性先 复合  再单属性
+
+
+盒子的尺寸 = 自身宽高+ 边框的宽高
+内填充padding，当盒子加了内边距 会撑大盒子的尺寸，如果不希望尺寸变化，相应的把内边距撑出的尺寸从宽高减去
+
+常用标签：
+<b>加粗</b> 	<strong>加粗</strong>
+<i>倾斜</i> 	<em>倾斜</em><br />
+<u>下划线</u>	 <ins>下划线</ins>
+<s>删除</s>  	 <del>删除</del> 
+
+
+锚点链接：<a href="#p1">去第一层</a> 跳转到本页标签p1处
+无序列表： ul   li
+有序列表： ol  	li
+自定义列表：<dl>
+			<dt>亚洲</dt>
+			<dd>中国</dd>
+			<dd>台湾</dd>
+			<dd>香港</dd>
+
+			<dt>欧洲</dt>
+			<dd>英国</dd>
+			<dd>法国</dd>
+			<dd>意大利</dd>
+		</dl>	
+
+表格：
+<table  width=300px height=300px border=边框 align="居中/左右对齐" cellspacing="表格线间隙" bgcolor="颜色">
+	<caption>标题</caption>
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+</table>
+
+
+将其他模式转换成行内块显示模式：display:inline-block;
+
+
+
+css层叠权重问题：标签选择器<类选择器<id选择器<行内样式<！important
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css层叠权重问题</title>
+	<style type="text/css">
+
+	/*css权重问题：标签选择器<类选择器<id选择器<行内样式<！important*/
+
+		.red{
+			color:red !important;  
+		}
+		#yellow{
+			color:yellow ;			
+		}
+		div{
+			font-size: 60px;
+			color:green;
+		}
+	</style>
+</head>
+<body>
+	<div class="red" id="yellow" style="color:blue">css层叠权重问题</div>
+</body>
+</html>
