@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>消除浮动造成的影响</title>
+	<style type="text/css">
+
+		/*方法一：给父盒子设定高度*/
+		/*.top{
+			height: 150px;
+		}*/
+
+		/*方法二：给父盒子设定 overflow:hidden   这种方法不完美，同时具有溢出隐藏功能*/
+
+		/*.top{
+			overflow: hidden;
+		}|*/
+
+		/*方法三：给父盒子调用伪类，调用标签clearfix*/
+		.clearfix:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}	
+		.clearfix {
+			/*解决ie6*/
+			*zoom: 1;
+		}
+
+
+
+		.top .one{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			float: left;
+		}
+		.top .two{
+			width: 150px;
+			height: 150px;
+			background: red;
+			float: left;
+		}
+		.body{
+			height: 200px;
+			background: gray;
+		}
+
+
+		
+
+	</style>
+</head>
+<body>
+	<div class="top clearfix">
+		<div class="one"></div>
+		<div class="two"></div>
+	</div>
+	<div class="body"></div>
+</body>
+</html>

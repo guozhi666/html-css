@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>外边框合并及塌陷</title>
+	<style type="text/css">
+		.one{
+			width:200px;
+			height: 200px;
+			background: red;
+			margin: 0 auto;
+			margin-bottom: 10px;
+		}
+		.two{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			margin: 0 auto;
+			margin-top: 20px;
+			/*padding-top: 50px;*/
+			/*overflow: hidden;*/
+			border-top: 1px solid blue;
+		}
+		.two .three{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			margin-left:50px;
+			margin-top: 50px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="no1">
+		<div class="one"></div>
+		<div class="two">
+			<div class="three"></div>
+		</div>
+	</div>
+</body>
+</html>

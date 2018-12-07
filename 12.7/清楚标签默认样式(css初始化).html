@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>清除标签默认样式(css初始化)</title>
+	<style type="text/css">
+		/*第一种方法：全局初始化*/
+		/**{
+			margin: 0;
+			padding: 0;
+		}*/
+
+		/*第二种方法：只初始化需要的标签,标签之间用,隔开*/
+		h1,span,ul,li{
+			margin: 0;
+			padding: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<h1 class="clearfix">段落</h1>
+	<p>段落</p>
+	<span>段落</span>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

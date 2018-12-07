@@ -8,16 +8,18 @@
 			/*设置整体的背景图以及边框*/
 
 			/*margin: 0 auto;*/
-			width:960px;
+			/*width:960px;*/
 			height: 760px;
-			background: url(../images/chun.jpg);
-			text-align: center;
+			background:gray url(../images/chun.jpg) no-repeat center center;
+			/*padding-left: 640px;*/
+			padding-top: 110px;
+			/*text-align: center;*/
 		}
 
 		.butto{
 
 			/*设置按钮的样式*/
-			width:100px;
+			/*width:100px;*/
 			height: 30px;
 			background:skyblue;
 			text-decoration: none;
@@ -28,6 +30,10 @@
 
 			background: yellow;
 		}
+		.body .nav{
+			width: 300px;
+			margin: 0 auto;
+		}
 	</style>
 </head>
 <body>
@@ -37,7 +43,7 @@
 			属性：action	 提交地址（网址）
 				  method 提交方式  get post -->
 				  
-		<form action="" method="get">
+		<form action="" method="get" class="nav">
 					<label for="s1">姓名：</label>
 					<input type="text" id="s1"><br><br>
 

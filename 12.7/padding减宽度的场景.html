@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>padding减宽度的场景</title>
+	<style type="text/css">
+		.one{
+			width: 200px;
+			height: 200px;
+			background: blue;
+		}
+		.two{
+
+			/*当块元素不设置width 时， 设置padding后不需要减宽度，内部会进行计算，当padding值大于父类的宽度时会溢出。
+			如果设置了width 则设定padding 时，需要相应的减去width的值。
+*/
+			/*width: 200px;*/
+			height: 50px;
+			background: red;
+			padding-left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="one">
+		<div class="two"></div>
+	</div>
+	
+</body>
+</html>
