@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>小米轮播图</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.box{
+			width: 1226px;
+			height: 460px;
+			background: pink;
+			margin:0 auto;
+			margin-top: 100px;
+			position: relative;
+		}
+		.box .box-bg a img{
+			width: 1226px;
+			/*display: block;*/
+		}
+		.box .box-bg a{
+			display: block;
+		}
+		.box .box-left{
+			width:234px;
+			height: 460px;
+			background: rgba(0,0,0,0.5);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.box span{
+			width:41px;
+			height: 69px;
+			/*line-height: 69px;*/
+			position: absolute;
+			left:234px;
+			top:50%;
+			background: url(../images/btn.png) no-repeat -84px 0;
+			margin-top:-35px;
+			/*text-align: center;*/
+			/*font-size: 40px;*/
+			cursor: pointer;
+
+		}
+		.box .btn-right{
+			background-position: -125px 0;
+			left:auto;
+			right:0;
+		}
+		.box span:hover{
+			background: url(../images/btn.png) no-repeat 0 0;
+		}
+		.box .btn-right:hover{
+			background-position: -42px 0;
+		}
+		.box ol{
+			position: absolute;
+			bottom:25px;
+			right: 35px;
+
+		}
+		.box ol li{
+			float:left;
+			width: 6px;
+			height: 6px;
+			background: #747886;
+			border:2px solid #9fa2ad;
+			margin-left:10px;
+			border-radius: 50%;
+		}
+		.box ol li:hover{
+			background: rgba(255,255,255,0.6);
+			border-color: #858790;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="box-bg">
+			<li>
+				<a href="">
+					<img src="../images/xiaomi.jpg">
+				</a>
+			</li>
+		</ul>
+		<div class="box-left"></div>
+		<span class="btn-left"></span>
+		<span class="btn-right"></span>
+		<ol>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+</body>
+</html>

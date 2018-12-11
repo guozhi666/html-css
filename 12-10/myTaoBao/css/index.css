@@ -1,0 +1,304 @@
+body{
+	background: #f1f1f1;
+	/*height: 5000px;*/
+}
+.header-wrap{
+	width: 100%;
+	height:35px;
+	background:#f5f5f5 ;
+}
+.header{
+	width: 1190px;
+	height: 35px;
+	/*background: pink;*/
+	margin: 0 auto;
+}
+.header .list-left{
+	float:left;
+	padding-left: 6px;
+}
+.header .list-left li{
+	float:left;
+}
+.header .list-left li a{
+	height: 35px;
+	line-height: 35px;
+	display: block;
+}
+.header .list-left .li02{
+	margin: 0 21px 0 5px;
+	
+}
+.colorF40{
+	color:#F40 !important;
+}
+.header .list-right{
+	float:right;
+}
+.baiSe-wrap{
+	height: 150px;
+	background: #fff;
+}
+
+.baiSe{
+	width: 1190px;
+	height: 150px;
+	/*background: pink;*/
+	margin: 0 auto;
+	position: relative;
+}
+.baiSe .er{
+	width: 94px;
+	height: 112px;
+	border:1px solid #eeeeee;
+	position: absolute;
+	top:32px;
+	right: 0;
+}
+.baiSe .er span{
+	text-align: center;
+	display: block;
+}
+.baiSe .er img{
+	margin: 5px 0 0 6px;
+}
+.baiSe .er .close{
+	height: 18px;
+	width: 18px;
+	border: 1px solid #eee;
+	position: absolute;
+	left: -20px;
+	top: -1px;
+	text-align: center;
+	color: #cfcfd5;
+}
+.baiSe .logo{
+	float:left;
+	margin: 38px 0 0 22px;
+}
+.baiSe .logo a{
+	display: block;
+	width: 145px;
+	height: 58px;
+	background: url(../images/logo.jpg) no-repeat 0 0;
+}
+.baby{
+	/*width: 700px;
+	height: 110px;*/
+	/*background: yellow;*/
+	float:left;
+	margin: 30px 0 0 100px;
+}
+.baby-top li{
+	float:left;
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	/*background: greenyellow;*/
+	color:#f40;
+	text-align: center;
+	cursor: pointer;
+}
+.baby-top .current{
+	background: #f40 !important;
+	color:#fff;
+	font-weight: 700;
+}
+.baby-top li:hover{
+	background: #FFEEE5;
+}
+.baby-center{
+	/*position: fixed;*/
+}
+.baby-center .txt{
+	width: 468px;
+	height: 34px;
+	border:3px solid #f50;
+	border-right:0 none;
+	float:left;
+	padding: 0;
+	color:#9c9c9c;
+	padding-left: 32px;
+}
+.baby-center .btn{
+	width: 122px;
+	height: 40px;
+	background: #ff4200;
+	padding: 0;
+	border:0 none;
+	font-size: 18px;
+	color:#fff;
+	font-family: "宋体";
+	font-weight: 700;
+	float:left;
+}
+.baby-center .gaoji{
+	float:left;
+	width: 25px;
+	margin-left: 9px;
+}
+.baby-bottom li{
+	float:left;
+	margin-right: 9px;
+}
+.baby-bottom li a{
+	display: block;
+	height: 38px;
+	line-height: 38px;
+}
+.baby-bottom .last{
+	float:right;
+	margin-right: 34px;
+}
+.main{
+	width: 1190px;
+	height: 555px;
+	background: yellow;
+	margin: 0 auto;
+}
+.main .main-left{
+	width: 190px;
+	height: 555px;
+	background: #f40;
+	float: left;
+}
+.main .main-right{
+	width: 990px;
+	height: 555px;
+	background: skyblue;
+	float: right;
+}
+.main .main-right .nav{
+	width: 990px;
+	height: 44px;
+	/*text-align: center;*/
+}
+.main .main-right .ul01{
+	float: left;
+	margin-top:4px;
+	/*border-right: 1px solid blue;*/
+}
+.main .main-right .ul01 li{
+	/*height: 44px;*/
+	/*text-align: center;*/
+	/*line-height: 44px;*/
+	float: left;
+	margin-right: 6px;
+}
+.main .main-right .ul01 li a{
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	color: #F40;
+	padding: 0 9px;
+	font-size: 16px;
+	font-weight: 700;
+	border-radius:12px ;
+}
+.main .main-right .ul01 li a:hover{
+	color: #fff;
+	background: #FF4400;
+}
+.main .main-right .ul02{
+	float: left;
+	margin-top:4px;
+}
+.main .main-right .ul02 li{
+	float: left;
+	margin-right: 4px;
+}
+.main .main-right .ul02 li a{
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	color: #3c3c3c;
+	padding: 0 6px;
+	font-size: 14px;
+	font-weight: 700;
+	border-radius:12px ;
+	/*left:auto;
+	right:0;*/
+}
+.main .main-right .ul02 li a:hover{
+	color: #fff;
+	background:#f40 ;
+}
+
+.main-right-bottom .lunbo{
+	width: 520px;
+	height: 511px;
+	background: pink;
+	float: left;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.lunbo .lunbo-top{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.lunbo .lunbo-top .lunbo-img{
+	height: 280px;
+	width: 520px;
+	background: red;
+	display:block;
+}
+.lunbo .lunbo-top li{
+	display: block;
+}
+.lunbo .lunbo-top span{
+	width: 28px;
+	height: 36px;
+	background: rgba(0,0,0,0.3);
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top:-18px ;
+	font-size: 40px;
+	line-height: 36px;
+	text-align: center;
+	display: block;
+	color: #fff;
+	cursor: pointer;
+}
+.lunbo .lunbo-top .span02{
+	left: auto;
+	right: 0;
+}
+.lunbo .lunbo-top span:hover{
+	background: rgba(0,0,0,0.7);
+}
+
+.lunbo .dian{
+	position: absolute;
+	left: 50%;
+	bottom: 15px;
+	margin-left: -32px;
+	background: c8a556;
+}
+.lunbo .dian{
+	/*height: 14px;*/
+	width: 67px;
+	/*border: 2px solid #fff;*/
+	background: pink;
+	border-radius: 6px;
+}
+.lunbo .dian li{
+	float: left;
+	margin:2px;
+}
+.lunbo .dian li a{
+	display: block;
+	width: 7px;
+	height: 7px;
+	/*margin: 2px;*/
+	background: #b7b7b7;
+	border: 1px solid #b7b7b7;
+	border-radius: 50%;
+}
+.lunbo .dian li a:hover{
+	background-color:#ff4400 ;
+}

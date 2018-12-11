@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>绝对定位和相对定位</title>
+	<style type="text/css">
+		.box{
+			width:800px;
+			height: 500px;
+			border:1px solid red;
+			margin:100px auto 0;
+			background: pink;
+			position: relative;
+		}
+		.d01{
+			width: 100px;
+			height: 100px;
+			background: green;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.d02{
+			/*display: block;*/
+			width: 150px;
+			height: 150px;
+			background: skyblue;
+			position: absolute;
+			right:0;
+			top:50%;
+			/*margin-left: -75px;*/
+			margin-top: -75px;
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span class="d01"></span>
+		<span class="d02"></span>
+	</div>
+</body>
+</html>
