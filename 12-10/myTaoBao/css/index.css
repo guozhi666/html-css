@@ -432,13 +432,13 @@ body{
 	float: right;
 	margin:10px 4px 0 0 ;
 }
-.lunbo .zuixiamian a{
+.lunbo .zuixiamian{
+	height: 202px;
+	/*width: 202px;*/
 	display: block;
-	height: 520px;
-	width: 202px;
 }
 .lunbo .zuixiamian img{
-	display: block;
+	/*display: block;*/
 	float: left;
 	height: 155px;
 	width: 250px;
@@ -446,11 +446,28 @@ body{
 	margin-top: 24px;
 	/*position: relative;*/
 }
-.lunbbo .zuihou-left{
+.lunbo .zuihou-left{
+	background: rgba(0,0,0,0.1);
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	margin-top: -12px;
+	left:6px;
 	display: block;
+	font-size: 24px;
+}
+.lunbo .zuihou-right{
+	background: rgba(0,0,0,0.1);
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	/*left:6px;*/
+	display: block;
+	font-size: 24px;
+	right: 8px;
+}
+.zuihou-right:hover, .zuihou-left:hover{
+	background: rgba(0,0,0,0.5);
+	color: #fff;
 }
 /*底部轮播图位置*/
 
