@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 工厂方式: 将new object的方式封装成函数,在创建对象是,通过函数的参数传递
+			 */
+			
+			
+			function person(name,age,gender){
+				//var name = '老刘';
+				var p = new Object();
+				p.name = name;
+				p.age = age;
+				p.gender = gender;
+				p.run = function(){
+					alert('站着跑');
+				}
+				return p;
+			}
+			var laoliu  = person('老刘',18,true);
+			console.log(laoliu);
+			console.log(laoliu.name);
+			laoliu.run();
+			var jay = person('周杰伦',40,true);
+			
+			function dog(name,age,gender){
+				var d = new Object();
+				d.name = name;
+				d.age = age;
+				d.gender = gender;
+				d.run = function(){
+					alert('爬');
+				}
+				return d;
+			}
+			var wc = dog('旺财',3,true);
+			console.log(wc);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 构造函数:和普通函数的定义没有太大区别
+			 * 我们可以认为是抽象出一种类型(class)
+			 * 通过new这个类型,这个构造函数,实例化这个类型的对象
+			 * 
+			 * 在new的过程中做的事情:
+			 * 1.在内存中开辟一个空间
+			 * 2.通过this.属性的方式,给对象添加属性和方法
+			 * 3.this指向的是当前实例对象
+			 * 4.不用return就可以将当前对象返回
+			 * 
+			 * instanceof:判断某个对象是否属于某个类型的实例对象
+			 */
+			/*
+			 * 人类
+			 */
+			function Person(name,age,gender){
+				this.name =name;
+				this.age = age;
+				this.gender = gender;
+				this.run = function(){
+					alert('奔跑');
+				}
+			}
+			var jay = new Person('周杰伦',40,true);
+			console.log(jay);
+			var jj = new Person('林俊杰',40,true);
+			console.log(jj.name);
+			jj.run();
+			var arr = new Array();
+			console.log(jay instanceof Person);
+			console.log(jay instanceof Array);
+			console.log(jay instanceof Object);
+			
+		</script>
+	</body>
+</html>

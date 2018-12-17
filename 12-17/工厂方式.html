@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function person(name, age, gender){
+				var p = new Object();
+				p.name = name;
+				p.age = age;
+				p.gender = gender;
+				p.run = function(){
+					alert('跑~~~')
+				}
+				return p;
+			}
+			var t = person('张三', 18, true);
+			console.log(t);
+			console.log(t.name);
+			t.run();
+			
+			var jay = person('周杰伦', 40, true);
+			console.log(jay);
+			console.log(jay.name);
+			console.log(jay.run());
+		</script>
+	</body>
+</html>

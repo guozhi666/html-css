@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 求两个数字的和
+			 */
+
+			/**
+			 * 求两个数字的和
+			 * @param {一个加数} a
+			 * @param {另一个加数} b
+			 * @return{返回一个和}
+			 */
+			function getSumByTwo(a, b) {
+				//var c = a+b;
+				return a + b;
+			}
+			console.log(getSumByTwo(10, 8));
+
+
+			/**
+			 * 返回三个数中的最大值
+			 * @param {一个数} x
+			 * @param {一个数} y
+			 * @param {一个数} z
+			 */
+			function getMaxByThree(x, y, z) {
+				return x > y ? (x > z ? x : z) : (y > z ? y : z);
+			}
+			console.log(getMaxByThree(3, 5, 10));
+			
+			//求n-m之间所有数的和
+			// 1-100
+			
+			/**
+			 * 返回n到m之间所有数字的和
+			 * @param {一个数} n
+			 * @param {另一个数} m
+			 */
+			function getSumByNAndM(n,m){
+				var sum = 0;
+				for(var i = n;i<=m;i++){
+					sum+= i;
+				}
+		        return sum;
+			}
+			console.log(getSumByNAndM(1,500));
+			
+			//求圆的面积
+			function getCircleArea(r){
+				return Math.PI*r*r;
+			}
+			console.log(getCircleArea(5));
+			
+			//判断一个数是否是素数(质数)
+			/*
+			 * 质数: 只能被1和自己整除的数是质数
+			 * 2,3,5,7,11,13,17,19,23,29,31,37,43,47
+			 */
+			function isZhiShu(num){
+				for(var i = 2;i<num;i++){
+					
+					if(num % i == 0){
+						//是合数
+						return false;
+					}
+				}
+				//当for循环结束,说明num从2一直取余到自己的前一个数,都没有进入判断,表示不是合数
+				//在函数中当遇到return会立刻跳出函数
+				return true;
+			}
+			
+//			console.log(isZhiShu(27));
+			var bool = isZhiShu(27);
+			
+//			if(bool == true){
+//				document.write('是质数');
+//			}else{
+//				document.write('不是质数');
+//			}
+//			if(bool == true){
+//				document.write('yes');
+//			}else{
+//				document.write('no');
+//			}
+//			if(bool == true){
+//				document.write('搜迪斯捏');
+//			}else{
+//				document.write('亚麻跌');
+//			}
+			
+			//求一组数字中的最大值
+			
+			var arr = [1,2,3,4,5];
+			
+			function getMaxByArray(arr){
+				//var arr = [1,2,3,4,5];
+				var max = arr[0];
+				for(var i = 0;i<arr.length;i++){
+					if(max < arr[i]){
+						max = arr[i];
+					}
+				}
+				return max;
+			}
+			console.log(getMaxByArray(arr));
+			
+			//求一个数组中的最大值和最小值还有和
+			var arr1 = [1,2,3,4,5];
+//			function getMaxAndMinAndSumByArray(arr){
+//				//var arr = [1,2,3,4,5];
+//				var max = arr[0];
+//				var min = arr[0];
+//				var sum = 0;
+//				for(var i = 0;i<arr.length;i++){
+//					
+//					//求和
+//					sum+=arr[i];
+//					//最大值
+//					if(max < arr[i]){
+//						max = arr[i];
+//					}
+//					//最小值
+//					if(min > arr[i]){
+//						min = arr[i];
+//					}
+//				}
+//				//将多个值保存在一个数组中,一次性返回
+//				var result = [sum,max,min];
+//				return result;
+//			}
+
+			//求一个数组中的最大值和最小值还有和
+			var arr1 = [1,2,3,4,5];
+			
+			/**
+			 * 返回一个数组中的最大值和最小值还有和
+			 * @param {一个数组} arr
+			 * @return {和} 数组的第一个元素
+			 * @return {最大值} 数组的第二个元素
+			 * @return {最小值} 数组的第三个元素
+			 */
+			function getMaxAndMinAndSumByArray(arr){
+				//var arr = [1,2,3,4,5];
+				var max = arr[0];
+				var min = arr[0];
+				var sum = 0;
+				for(var i = 0;i<arr.length;i++){
+					
+					//求和
+					sum+=arr[i];
+					//最大值
+					if(max < arr[i]){
+						max = arr[i];
+					}
+					//最小值
+					if(min > arr[i]){
+						min = arr[i];
+					}
+				}
+				//将多个值保存在一个数组中,一次性返回
+//				var result = [sum,max,min];
+//				return result;
+				
+				return [sum,max,min];
+			}
+//			console.log(getMaxAndMinAndSumByArray([1,2,3,4,5]));
+			var t = getMaxAndMinAndSumByArray([1,2,3,4,5]);
+			document.write(t[0]);
+		</script>
+	</body>
+
+</html>

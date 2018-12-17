@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 1.弹出一个prompt,输入学生人数
+			 * 2.弹出prompt输入学生分数,弹出的次数和学生人数一样
+			 * 3.计算总分,平均分,最高分,最低分
+			 */
+			var stuCount = parseInt(prompt('请输入学生的人数'));
+			//用数组存储每位学生分数
+			var stuScore = [];
+			//总分
+			var sum = 0;
+			//最高分
+			var max = 0; //当数组中如果都是负数的情况,都会比0小,此时,最大值永远是0;
+			//最低分
+			var min = 0;
+			console.log(stuCount);
+			for(var i = 0; i < stuCount; i++) {
+				stuScore[stuScore.length] = parseInt(prompt('输入第' + (i + 1) + '位学生分数'));
+			}
+			//最高分   stuScore[0] y
+			max = stuScore[0]; //[80,90,75];
+			//最低分
+			min = stuScore[0];
+			//遍历数组中的每个元素
+			for(var i = 0; i < stuScore.length; i++) {
+				//总分
+				sum += stuScore[i];
+				//最高分
+				if(max < stuScore[i]) {
+					max = stuScore[i];
+				}
+
+				if(min > stuScore[i]) {
+					min = stuScore[i];
+				}
+			}
+			console.log('学生的总分是:' + sum + '分');
+			console.log('学生的平均分是:' + sum / stuScore.length + '分');
+			console.log('最高分数是:' + max + '分');
+			console.log('最低分数是:' + min + '分');
+		</script>
+	</body>
+
+</html>

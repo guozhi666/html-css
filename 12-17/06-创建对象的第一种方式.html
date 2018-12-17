@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 第一种创建对象的方式:new Object,
+			 * js对象支持动态用点的方式添加属性和方法
+			 */
+			var person = new Object();
+			person.name = '老刘';
+			person.age = 18;
+			person.gender = true;
+			person.run = function(){
+				alert('跑~~~~');
+			}
+			person.name = '周杰伦';
+			console.log(person.name);
+			console.log(person);
+			person.run();
+		</script>
+	</body>
+
+</html>

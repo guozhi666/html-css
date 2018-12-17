@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var stuNum = parseInt(prompt('请输入学生人数：'));
+			var stuArr = [];
+			
+			for(i = 0; i < stuNum; i++){
+				stuArr[stuArr.length] = parseInt(prompt('请输入第'+(i+1)+'学生分数'));
+//				stuArr[stuArr.length] = parseInt(prompt('输入第' + (i + 1) + '位学生分数'));
+			}
+//			console.log(stuArr);
+			var max = stuArr[0];
+			var min = stuArr[0];
+			
+			for(var i = 0; i<stuArr.length; i++){
+				if(max < stuArr[i]){
+					max = stuArr[i];
+				}
+			}
+			console.log('最高分是'+max);
+			
+			for(var i = 0; i<stuArr.length; i++){
+				if(min > stuArr[i]){
+					min = stuArr[i];
+				}
+			}
+			console.log('最低分是'+min);
+		</script>
+	</body>
+</html>
