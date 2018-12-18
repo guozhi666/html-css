@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 数组:一组有序数据的集合
+			 * 对象:一组无序数据的集合
+			 * json:是一个对象,也是一种数据格式,用来进行前后台之间数据的传递,标准的方式,属性名
+			 * 用双引号,字符串数据用双引号
+			 * 由于在传输的过程中,要将json格式暂时转换成字符串的格式,所以要用
+			 * JSON.parse(字符串):返回一个json对象
+			 * JSON.stringify(json对象):返回一个字符串
+			 * 
+			 * 遍历对象中的属性: for(var k in 对象)
+			 */
+
+			var json = '{"name": "周杰伦","age": 40,"color": "黄种人"}';
+//			console.log(json.name);
+			var json2 = JSON.parse(json);
+			console.log(json2.name);
+			
+			var json3 = {"name": "王力宏","age": 40,"color": "黄种人"};
+			var json4 = JSON.stringify(json3);
+			console.log(json4);
+			
+			
+			var json5 = {"name": "王力宏","age": 40,"color": "黄种人","gender":true};
+//			console.log(json5.length);
+
+			//遍历对象属性
+			for(var k in json5){
+				//程序会认为动态的给json5对象添加一个属性名叫k
+//				console.log(json5.k);
+				//json5["name"] json5["age"]
+				console.log(k+':'+json5[k]);
+			}
+		
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 访问对象属性的另一种方式: 对象["属性名"]
+			 */
+			var per = {
+				name:'王力宏',
+				age:41,
+				sing:function(){
+					console.log('龙的传人');
+				}
+			};
+			per.name = '老刘';
+			per["name"] = '老王';
+			console.log(per);
+		</script>
+	</body>
+</html>

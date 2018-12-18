@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * call和apply函数都可以改变this的指向,这两个方法都是函数名.call或者函数名.apply
+			 * call函数:第一个参数,指向的对象,第二个参数起是调用函数的参数
+			 * apply函数:第一个参数,指向的对象,第二个参数是一个数组,是调用函数的参数
+			 */
+			
+			
+			function Person(name,age){
+				this.name =name;
+				this.age=age;
+				this.run = function(){
+					console.log('跑');
+					console.log(this);
+				}
+			}
+			function Dog(name,age){
+				this.name = name;
+				
+			}
+			
+			var jay = new Person('周杰伦',40);
+			var dog = new Dog('阿黄');
+			function sum(a,b,c){
+				console.log(this);
+				return a+b+c;
+			}
+//			sum();
+//			console.log(sum.call(jay,2,3,5));
+//			jay.run.call(dog);
+			
+			console.log(sum.apply(jay,[2,3,5]));
+			jay.run.apply(dog);
+		</script>
+	</body>
+</html>

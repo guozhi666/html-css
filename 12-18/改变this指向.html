@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function Person(name, age, gender){
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				this.run = function(){
+					console.log('跑');
+					console.log(this);
+				}
+			}
+			
+			function Dog(name){
+				this.name = name;
+			}
+			
+			function sum(a,b,c){
+				console.log(this);
+				console.log(a+b+c);
+			}
+			
+			var jay = new Person('周杰伦', 18, true);
+			var dog = new Dog('阿黄');
+			jay.run.call(dog);
+			
+			console.log(sum.apply(jay,[2,3,5]));
+			
+			
+		</script>
+	</body>
+</html>

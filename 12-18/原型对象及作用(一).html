@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//构造函数
+			function HunPer(color, age){
+				this.color = color;
+				this.age = age;
+			}
+			//构造函数的原型对象上创建方法
+			HunPer.prototype.hit =function(){
+				console.log('打人');
+			}
+			HunPer.prototype.gender = '男';
+			
+			var xiaohong = new HunPer('red', 18);
+			console.log(xiaohong.hit());
+			xiaohong.hit();
+//			console.dir(xiaohong);
+//			console.dir(HunPer);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/* 实例对象,构造函数,原型对象三者关系:
+			 * 实例对象中有个__proto__属性(隐式原型)指向的是构造函数中的prototype属性(显示原型)
+			 * 显示原型对象中有constructor构造器指向的是构造函数,构造函数中有个prototype指向的是原型
+			 * 对象,构造函数实例化出的对象
+			 * 
+			 * 原型对象:
+			 * 是一块公共的存储空间,可以将一些公共的属性和方法,定义到原型对象中,当对象需要调用时
+			 * 直接调用原型对象中的,可以实现资源共享,节省空间
+			 * 
+			 */
+			//构造函数
+//			function Person(name, age) {
+//				this.name = name;
+//				this.age = age;
+//				this.run = function() {
+//					console.log('跑');
+//				}
+//			}
+//			var jj = new Person('林俊杰', 40);
+//			var jay = new Person('周杰伦', 41);
+//			console.log(jj);
+//			//			console.log(Person);
+//			//用控制台展开输出Person的结构
+//			console.dir(Person);
+//			console.log(jj.run == jay.run);
+
+			function HunPer(color,age,gender){
+				this.color = color;
+				this.age = age;
+//				this.gender = gender;
+//				this.bit = function(){
+//					console.log('打敌人');
+//				}
+			}
+//			console.log(window.a);
+			//原型对象
+				HunPer.prototype.bit = function(){
+					console.log('打敌人');
+				}
+				HunPer.prototype.gender = '男';
+			
+			var xiaohuang = new HunPer('yellow',18);
+			xiaohuang.bit();
+			var xiaohong = new HunPer('red',18);
+			xiaohong.bit();
+			console.log(xiaohuang.bit == xiaohong.bit);
+			console.dir(xiaohong);
+			console.log(xiaohong.gender);
+			console.dir(xiaohong.__proto__); 
+			console.log(HunPer.prototype);
+		</script>
+	</body>
+
+</html>
