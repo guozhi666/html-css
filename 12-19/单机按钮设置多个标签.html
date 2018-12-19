@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<button id="btn2">按钮</button>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var btn2 = document.getElementById('btn2');
+			var ps = document.getElementsByTagName('p');
+			
+			btn.onclick = function(){
+				for(i = 0; i< ps.length; i++){
+					ps[i].innerText = '我是p标签';
+				}
+			}
+			btn2.onclick = function(){
+				for(i = 0; i< ps.length; i++){
+					ps[i].innerText = '段落';
+				}
+			}
+		</script>
+	</body>
+</html>

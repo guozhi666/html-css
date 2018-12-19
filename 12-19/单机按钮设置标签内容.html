@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button id="btn">按钮</button>
+		<a href="##" id="taobao">百度</a>
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var taobao = document.getElementById('taobao');
+			btn.onclick = function() {
+				//改变a标签的内容
+				taobao.innerText = '淘宝';
+				//设置href属性
+				taobao.href = 'http://www.taobao.com';
+			}
+		</script>
+	</body>
+
+</html>

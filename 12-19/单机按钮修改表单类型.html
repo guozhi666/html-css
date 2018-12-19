@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<input type="text" />
+		<input type="button"  value="按钮" id="btn"/>
+		<input type="button"  value="按钮2" id="btn2"/>
+		<input type="text" />
+		<input type="text" />
+		<input type="text" />
+		
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var btn2 = document.getElementById('btn2');
+			var inputs = document.getElementsByTagName('input');
+			
+			btn.onclick	= function(){
+				for(i = 0; i<inputs.length; i++){
+					if(inputs[i].type =='text'){
+						inputs[i].type = 'checkbox';
+					}
+				}
+			}
+			btn2.onclick	= function(){
+				for(i = 0; i<inputs.length; i++){
+					if(inputs[i].type =='checkbox'){
+						inputs[i].type = 'text';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

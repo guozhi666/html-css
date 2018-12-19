@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function f1(x,y){
+				return x+y;
+			}
+			
+			var sum = function(a){
+				console.log(a(5,10));
+			}
+			
+			sum(f1);
+			console.log(sum);
+		</script>
+	</body>
+</html>

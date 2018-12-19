@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{
+				display: block;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<img id="imglist"/>
+		
+		<script type="text/javascript">
+			var btn  = document.getElementById('btn');
+			var imglist = document.getElementById('imglist');
+			
+			btn.onclick = function(){
+				imglist.src="../../课堂练习/images/tianshi.gif";
+				imglist.width = '300';
+			}
+		</script>
+	</body>
+</html>

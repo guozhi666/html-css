@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var myDate = new Date();
+			
+			var str = myDate.getDay();
+			
+			switch (str){
+				case 1:
+					str = '一'
+					break;
+				case 2:
+					str = '二'
+					break;
+				case 3:
+					str = '三'
+					break;
+				case 4:
+					str = '四'
+					break;
+				case 5:
+					str = '五'
+					break;
+				case 6:
+					str = '六'
+					break;
+				default:
+					str = '日'
+					break;
+			}
+			
+			console.log(myDate.getFullYear() + '年'+myDate.getMonth()+'月'+myDate.getDate()+'日'+ '  '+'星期'+str+myDate.toLocaleTimeString())
+		</script>
+	</body>
+</html>
