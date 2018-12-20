@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//原型对象
+			function Hunper(name, color) {
+				this.name = name;
+				this.color = color;
+			}
+			Hunper.prototype.bit = function() {
+				console.log('打敌人');
+			}
+			Hunper.prototype.age = 18;
+
+			var blue = new Hunper('蓝的', 'blue');
+			var red = new Hunper('红的', 'red');
+
+			console.log(blue.age);
+			blue.bit();
+
+			//原型链
+			function Person(name, age) {
+				this.name = name;
+				this.age = age;
+
+				this.sing = function() {
+					console.log('构造函数中的sing');
+				}
+			}
+
+			//调用构造函数；
+			var jay = new Person('周杰伦', 40);
+
+			//构造原型对象：
+
+			Person.prototype.sing = function() {
+				console.log('原型对象中的sing');
+			}
+
+			Object.prototype.sing = function() {
+				console.log('Object原型对象中的sing');
+			}
+
+			//调用原型上定义的属性;
+//			jay.sing();
+
+			console.log(jay.__proto__.__proto__.__proto__);
+		</script>
+	</body>
+
+</html>
