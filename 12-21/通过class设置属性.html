@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				height: 100px;
+				width: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var box = document.getElementById('box')
+			
+			//class为预留词，不可以直接调用，所以通过  className 的方式调用;
+			btn.onclick = function(){
+				box.className = 'box';
+			}
+		</script>
+	</body>
+</html>

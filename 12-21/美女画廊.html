@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>美女画廊</h2>
+		<ul id="list">
+			<li><a href="images/1.jpg">
+				<img src="images/1-small.jpg" width="100" /></a></li>
+			<li><a href="images/2.jpg">
+				<img src="images/2-small.jpg" width="100" /></a></li>
+			<li><a href="images/3.jpg">
+				<img src="images/3-small.jpg" width="100" /></a></li>
+			<li><a href="images/4.jpg">
+				<img src="images/4-small.jpg" width="100" /></a></li>
+		</ul>
+		<img src="images/placeholder.png"/ id="imgs" width="400">
+		
+		<script type="text/javascript">
+			var list = document.getElementById('list');
+			var a = list.getElementsByTagName('a');
+			var imgs = document.getElementById('imgs')
+			for (var i = 0; i < a.length; i++) {
+				a[i].onclick = function(){
+					imgs.src = this.href;
+					return false;
+				}
+			}
+		</script>
+	</body>
+</html>

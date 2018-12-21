@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				cursor: pointer;
+			}
+			.one{
+				background: pink !important;
+			}
+			.two{
+				background: greenyellow !important;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+		
+		<script type="text/javascript">
+			var lis = document.getElementsByTagName('li');
+			
+			for (var i = 0; i < lis.length; i++) {
+				if(i%2 ==0){
+					lis[i].style.background = 'yellow'
+				}else{
+					lis[i].style.background = 'green'
+				}
+				lis[i].setAttribute('num', i);
+				lis[i].onmouseover = function(){
+					if(this.getAttribute('num')%2 == 0){
+						this.className = 'one';
+					}else{
+						this.className = 'two';
+					}
+				}
+				lis[i].onmouseout = function(){
+					this.className = '';
+				}
+				
+			}
+		</script>
+	</body>
+</html>

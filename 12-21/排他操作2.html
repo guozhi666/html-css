@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>😊</button>
+		<button>😊</button>
+		<button>😊</button>
+		<button>😊</button>
+		<button>😊</button>
+		<button>😊</button>
+		<button>😊</button>
+		<button>😊</button>
+		
+		<script type="text/javascript">
+			var btn = document.getElementsByTagName('button');
+			for (var i = 0; i < btn.length; i++) {
+				btn[i].onclick = function(){
+					for (var i = 0; i < btn.length; i++) {
+						btn[i].innerHTML = '😊';
+					}
+					this.innerHTML = '😭';
+				}
+			}
+		</script>
+	</body>
+</html>

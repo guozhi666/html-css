@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>🙁</button>
+		<button>🙁</button>
+		<button>🙁</button>
+		<button>🙁</button>
+		<button>🙁</button>
+		<button>🙁</button>
+		<button>🙁</button>
+		<button>🙁</button>
+		<button>🙁</button>
+		<button>🙁</button>
+		
+		<script type="text/javascript">
+			/**
+			 * 排它操作:所有人做默认的事情,自己做某件事情
+			 */
+			var btns = document.getElementsByTagName('button');
+			//循环绑定事件
+			for (i=0; i<btns.length; i++){
+				btns[i].onclick = function(){
+					//循环重置默认表情
+					for (i=0; i<btns.length; i++){
+						btns[i].innerText = '🙁';
+					}
+					//让自己开心
+					this.innerText = '😄';
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ol{
+				list-style: none;
+			}
+			.moren{
+				height: 50px;
+				width: 50px;
+				float: left;
+				line-height: 50px;
+				text-align: center;
+				background: pink;
+				margin-left: 5px;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+			.curron{
+				background: greenyellow;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<ol>
+			<li class="moren">1</li>
+			<li class="moren">2</li>
+			<li class="moren">3</li>
+			<li class="moren">4</li>
+			<li class="moren">5</li>
+		</ol>
+		
+		<script type="text/javascript">
+			var lis = document.getElementsByTagName('li');
+			
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].onclick = function(){
+					for (var i = 0; i < lis.length; i++) {
+						lis[i].className = 'moren';
+					}
+					this.className = 'moren curron';
+				}
+			}
+		</script>
+	</body>
+</html>

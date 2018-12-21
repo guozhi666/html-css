@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<img src="images/2-small.jpg" width="100" />
+		<img src="images/1-small.jpg" width="200" />
+		<img src="images/3-small.jpg" width="300" />
+
+		<script type="text/javascript">
+			//获取所有img标签
+			var imgs = document.getElementsByTagName('img');
+			//for循环遍历所有img 并输出
+			for(i = 0; i < imgs.length; i++) {
+				imgs[i].laoliu  = i;
+				imgs[i].onclick = function(){
+					alert(this.laoliu);
+//					alert(this.width);		//this指向 imgs[i]对象；
+				}
+			}
+			
+		</script>
+	</body>
+
+</html>

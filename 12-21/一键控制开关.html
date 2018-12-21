@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn1">打开/关闭</button>
+		<div id="box"></div>
+		<script type="text/javascript">
+			var btn1 = document.getElementById('btn1');
+			var box = document.getElementById('box');
+			var kaiguan = 1;
+			btn1.onclick = function(){
+				if(kaiguan ==1){
+					box.style.display = 'none';
+					kaiguan = 0;
+				}else{
+					box.style.display = 'block';
+					kaiguan = 1;
+				}
+			}
+					
+		</script>
+	</body>
+</html>

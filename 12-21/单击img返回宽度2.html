@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="images/1-small.jpg" width="100"/>
+		<img src="images/2-small.jpg" width="150"/>
+		<img src="images/3-small.jpg" width="200"/>
+		
+		<script type="text/javascript">
+			var imgs = document.getElementsByTagName('img');
+			
+			for (var i = 0; i < imgs.length; i++) {
+				imgs[i].setAttribute('index', i);
+				imgs[i].onclick = function(){
+					console.log(i);
+					alert(this.getAttribute('index'));
+				}
+			}
+		</script>
+	</body>
+</html>
