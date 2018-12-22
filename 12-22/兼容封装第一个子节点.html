@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<!--R&B曲风-->
+			<h2>周杰伦</h2>
+			<ul id="list">
+				哈哈
+				<!--范特西-->
+				<!--八度空间-->
+				<!--叶惠美-->
+				<li>双节棍</li>
+				<li>青花瓷</li>
+				<li>菊花台</li>
+				<li>七里香</li>
+				<li>回到过去</li>
+				<li>东风破</li>
+				<li>告白气球</li>
+				<!--周杰伦的床边故事-->
+			</ul>
+			<h3>方文山</h3>
+		</div>
+		
+		<script type="text/javascript">
+			/*
+			 * firstChildName  适配高级浏览器  第一个子元素
+			 * fistChild  适配低级浏览器	第一个子节点；
+			 */
+			
+			var list = document.getElementById('list');
+			
+			
+			console.log(getFirstElements(list));
+			/**
+			 * 兼容性封装获取元素对象的第一个子元素；
+			 * @param {元素对象} obj
+			 */
+			function getFirstElements(obj){
+				if(obj.firstElementChild){
+					//适配高级浏览器
+					return obj.firstElementChild;
+				}else{
+					var nodeE = obj.firstChild;
+					//适配低级浏览器
+					while(nodeE && nodeE.nodeType !=1){
+						nodeE = nodeE.nextSibling;
+					}
+					return nodeE;
+				}
+			}
+		</script>
+	</body>
+</html>

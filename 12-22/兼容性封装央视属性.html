@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<button>设置</button>
+		<button>获取</button>
+		<div id="box"  style="width: 300px;">我是div</div>
+		
+		<script type="text/javascript">
+			
+			var btn = document.getElementsByTagName('button');
+			var box = document.getElementById('box');
+			
+			/*
+			 * 对象.style.属性的方式只能设置和读取行内样式的属性,不能设置和读取内嵌式和外链式的方式.
+			 * getComputedStyle(元素对象),返回一个包含所有属性的对象,所有高级浏览器能用,ie678不能用
+			 * 对象.currentStyle,所有ie都能用,但是其他高级浏览器不能用.
+			 */
+			
+			btn[0].onclick = function(){
+				
+			}
+			
+			btn[1].onclick = function(){
+				console.log(getStyle(box, 'width'));
+			}
+			
+//			console.log(box.style.width);
+//				console.log(getComputedStyle(box).width);
+//				console.log(box.currentStyle.width);
+			//由于getComputedStyle是window对象下面的方法,高级浏览器中该方法中有数据(函数体),
+			//低版本浏览器中,没有该方法,所以如果省略掉window就会报错了,所以在用该方法作为判断条件
+			//的时候,把window带上.
+//				if(window.getComputedStyle){
+//					//alert('高级浏览器');
+//					
+//				}else{
+//					//alert('垃圾');
+//				}
+
+//				console.log(window.a);
+			
+			function getStyle(obj, por){
+				if(window.getComputedStyle){
+					return getComputedStyle(obj)[por];
+				}else{
+					return obj.currentStyle[por];
+				}
+			}
+		</script>
+	</body>
+</html>

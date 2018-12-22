@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<div id="box">我是一个盒子</div>
+		
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var box = document.getElementById('box');
+			
+			btn.onclick = function(){
+				
+			}
+			/**
+			 * 兼容性获取innerText属性函数
+			 * @param {Object} obj
+			 */
+			function getInnerText(obj){
+				if(obj.textContent){
+					return obj.textContent;
+				}else{
+					return obj.innerText;
+				}
+			}
+			/**
+			 * 兼容性设置innerText属性函数
+			 * @param {Object} obj
+			 * @param {Object} txt
+			 */
+			function setInnerText(obj, txt){
+				if(obj.textContent){
+					obj.textContent = txt;
+				}else{
+					obj.innerText = txt;
+				}
+			}
+		</script>
+	</body>
+</html>
