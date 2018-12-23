@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			var arr = ['西游记','三国演义','红楼梦','金瓶梅'];
+			var btn = document.getElementById('btn');
+			var box = document.getElementById('box');
+			var str = '';
+			//第一种添加方式
+//			btn.onclick = function(){
+//				document.write('测试第一种添加方式')
+//			}
+
+			//第二种添加方式
+			btn.onclick = function(){
+				str+= '<ul>';
+				for (var i = 0; i < arr.length; i++) {
+					str+='<li>'+ arr[i] + '</li>';
+				}
+				str+= '</ul>';
+				console.log(str);
+				box.innerHTML = str;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<!--R&B曲风-->
+			<h2>周杰伦</h2>
+			<ul id="list">
+				<li id="li03">菊花台</li>
+				哈哈
+				<!--范特西-->
+				<!--八度空间-->
+				<!--叶惠美-->
+				<li>青花瓷</li>
+				<li>双节棍</li>
+				<li>七里香</li>
+				<li>回到过去</li>
+				<li id="li01">东风破</li>
+				<li>告白气球</li>
+				<!--周杰伦的床边故事-->
+			</ul>
+			<h3>方文山</h3>
+
+		</div>
+		
+		<script type="text/javascript">
+			var li01 = document.getElementById('li01');
+			var box = document.getElementById('box');
+			
+			console.log(getPreviousElementSibling(li01));
+			
+			function getPreviousElementSibling(obj){
+				if(obj.previousElementSibling){
+					return obj.previousElementSibling;
+				}else{
+					var nodeE = obj.listChild;
+					while(nodeE && nodeE.nodeType !=1 ){
+						nodeE = nodeE.previousElementSibling;
+					}
+					return nodeE;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -28,18 +28,22 @@
 		<script type="text/javascript">
 			var list = document.getElementById('list');
 			
+			console.log(getNextElementSibling(list));
 			/**
 			 * 兼容性封装下一个兄弟节点；
 			 * @param {父元素对象} obj
 			 */
-			function getNextElementsSibling(obj){
+			function getNextElementSibling(obj){
+				//兼容高级浏览器
 				if(obj.getNextElementSibling){
-					return obj.getNextElementsSibling;
+					return obj.getNextElementSibling;
 				}else{
-					var nodeE = obj.firstChild;
+					//兼容低级浏览器
+					var nodeE = obj.nextSibling;
 					while(nodeE && nodeE.nodeType !=1){
-						noedE = nodeE.nextSibling;
+						nodeE = nodeE.nextSibling;
 					}
+				
 					return nodeE;
 				}
 			}
