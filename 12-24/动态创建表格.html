@@ -72,8 +72,13 @@
 				width: 100px;
 				height: 30px;
 				display: block;
-				
 				margin: 20px auto 0;
+			}
+			span{
+				position: absolute;
+				right: 10px;
+				top: 5px;
+				cursor: pointer;
 			}
 		</style>
 	</head>
@@ -88,7 +93,7 @@
 						<th>已看过</th>
 					</tr>
 				</thear>
-				<tbody>
+				<tbody id="tbody">
 					<tr>
 						<td>海王</td>
 						<td>外国人</td>
@@ -110,6 +115,7 @@
 		<div class="cover" id="cover"></div>
 		<div class="dialog" id="dialog">
 			<h3>添加数据</h3>
+			<span id="close" class="close">X</span>
 			<div>
 				<label for="txt1">电影名称</label>
 				<input type="text"  id="txt1" placeholder="输入电影名称"/>
@@ -120,5 +126,68 @@
 			</div>
 			<button class="complete" id="complete">完成</button>
 		</div>
+		
+		<script type="text/javascript">
+			var tbody = document.getElementById('tbody');
+			var str = tbody.children;
+			var btn = document.getElementById('btn');
+			var cover = document.getElementById('cover');
+			var dialog = document.getElementById('dialog');
+			var txt1 = document.getElementById('txt1');
+			var txt2 = document.getElementById('txt2');
+			var complete = document.getElementById('complete');
+			var close = document.getElementById('close');
+			
+			for (var i = 0; i < str.length; i++) {
+				var tr = str[i];
+				var a = tr.getElementsByTagName('a')[0];
+				a.onclick = function(){
+					tbody.removeChild(this.parentElement.parentElement);
+				}
+			}
+			//单机添加数据
+			btn.onclick = function(){
+				cover.style.display = 'block';
+				dialog.style.display = 'block';
+				
+			}
+			//单机完成按钮
+			complete.onclick = function(){
+				var txt1Str = txt1.value.trim();
+				var txt2Str = txt2.value.trim();
+				if(txt1Str && txt2Str){
+					cover.style.display = 'none';
+					dialog.style.display = 'none';
+					var tr = document.createElement('tr');
+					tbody.appendChild(tr);
+					for (var i = 0; i < 3; i++) {
+						var td = document.createElement('td');
+						tr.appendChild(td);
+						if(i == 0){
+							td.innerText = txt1Str;
+						}else if(i == 1){
+							td.innerText = txt2Str;
+						}else{
+							var a = document.createElement('a');
+							a.href = '##';
+							a.innerText = '删除';
+							td.appendChild(a);
+							a.onclick = function(){
+								tbody.removeChild(this.parentElement.parentElement);
+							}
+						}
+					}
+					txt1.value = '';
+					txt2.value = '老李';
+				}else{
+					alert('电影名称和主演不能为空');
+				}
+			}
+			
+			close.onclick = function(){
+				cover.style.display = 'none';
+				dialog.style.display = 'none';
+			}
+		</script>
 	</body>
 </html>
