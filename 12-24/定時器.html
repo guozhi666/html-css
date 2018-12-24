@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>打開單次定時器</button>
+		<button>關閉單次定時器</button>
+		<button>打開多次定時器</button>
+		<button>關閉多次定時器</button>
+		
+		<script type="text/javascript">
+			var btns = document.getElementsByTagName('button');
+			var timer01 = 0;
+			var timer02 = 0;
+			btns[0].onclick = function(){
+				timer01 = setTimeout(function(){alert('炸彈來了！')}, 1000);
+			}
+			btns[1].onclick = function(){
+				clearTimeout(timer01);
+			}
+			btns[2].onclick = function(){
+				timer02 = setInterval(function(){alert('炸彈來了！')}, 1000);
+			}
+			btns[3].onclick = function(){
+				clearInterval(timer02);
+		</script>
+	</body>
+</html>

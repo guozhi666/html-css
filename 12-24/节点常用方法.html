@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		
+		<script type="text/javascript">
+			/*
+			 * 三个方法都是父元素调用：
+			 * insertBefore(新对象,参照对象):将新对象插入到参照对象的前面
+			 * replaceChild(新对象,参照对象):将新对象替换参照对象
+			 * removeChild(被删除的对象): 删除元素对象
+			 */
+			var btn = document.getElementById('btn');
+			var list = document.getElementById('list');
+			
+			btn.onclick = function(){
+				var li = document.createElement('li');
+				li.innerText = 6;
+//				list.appendChild(li);
+				list.insertBefore(li, list.firstElementChild);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.box{
+				width: 320px;
+				height: 210px;
+				/*background: pink;*/
+				margin: 100px auto 0px;
+			}
+			.btn{
+				width: 100px;
+				height: 30px;
+			}
+			table{
+				border: 1px solid #ccc;
+				border-spacing: 0;
+				width: 300px;
+				border-collapse: collapse;
+			}
+			tr,td{
+				border: 1px solid #ccc;
+				text-align: center;	
+				padding: 5px 0;
+			}
+			th{
+				color: #fff;
+				background:#09c;
+				padding: 5px 0;
+			}
+			.cover{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.5);
+				display: none;
+			}
+			.dialog{
+				width: 430px;
+				height: 250px;
+				position: absolute;
+				left: 50%;
+				margin-left: -215px;
+				top: 200px;
+				background: #fff;
+				display: none;
+			}
+			.dialog div{
+				padding: 15px 0 0 20px;
+			}
+			h3{
+				text-align: center;
+				background: #ccc;
+				padding: 3px 0;
+			}
+			input{
+				width: 300px;
+				height: 30px;
+				border-radius: 5px;
+				border: 1px solid #ccc;
+			}
+			.complete{
+				width: 100px;
+				height: 30px;
+				display: block;
+				
+				margin: 20px auto 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<button class="btn" id="btn">添加数据</button>
+			<table>
+				<thear>
+					<tr>
+						<th>电影名称</th>
+						<th>领衔主演</th>
+						<th>已看过</th>
+					</tr>
+				</thear>
+				<tbody>
+					<tr>
+						<td>海王</td>
+						<td>外国人</td>
+						<td><a href="##">删除</a></td>
+					</tr>
+					<tr>
+						<td>龙猫</td>
+						<td>宫崎骏</td>
+						<td><a href="##">删除</a></td>
+					</tr>
+					<tr>
+						<td>毒液</td>
+						<td>鬼知道</td>
+						<td><a href="##">删除</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="cover" id="cover"></div>
+		<div class="dialog" id="dialog">
+			<h3>添加数据</h3>
+			<div>
+				<label for="txt1">电影名称</label>
+				<input type="text"  id="txt1" placeholder="输入电影名称"/>
+			</div>
+			<div>
+				<label for="txt2">领衔主演</label>
+				<input type="text" id="txt2" value="老刘"/>
+			</div>
+			<button class="complete" id="complete">完成</button>
+		</div>
+	</body>
+</html>

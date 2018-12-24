@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div01{
+				width: 300px;
+				height: 300px;
+				background: red;
+			}
+			#div02{
+				width: 200px;
+				height: 200px;
+				background: green;
+			}
+			#div03{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div01">div01
+			<div id="div02">div02
+				<div id="div03">
+					div03
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var div01 = document.getElementById('div01');
+			var div02 = document.getElementById('div02');
+			var div03 = document.getElementById('div03');
+			
+			div01.onclick = function(){
+				console.log('div01')
+			}
+			div02.onclick = function(){
+				console.log('div02')
+			}
+			div03.onclick = function(){
+				console.log('div03')
+				window.event.cancelBubble = true;
+			}
+			
+			
+		</script>
+	</body>
+</html>

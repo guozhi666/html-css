@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			h2{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">添加数据</button>
+		<ul id="list">
+			<li>
+				<h2>
+					标题
+				</h2>
+				<a href="##">1</a>
+			</li>
+			<li>
+				<h2>
+					标题
+				</h2>
+				<a href="##">2</a>
+			</li>
+			<li>
+				<h2>
+					标题
+				</h2>
+				<a href="##">3</a>
+			</li>
+			<li>
+				<h2>
+					标题
+				</h2>
+				<a href="##">4</a>
+			</li>
+		</ul>
+		
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var list = document.getElementById('list');
+			var lis = list.getElementsByTagName('li');
+			
+			btn.onclick = function(){
+				var li = document.createElement('li');
+				var h2 = document.createElement('h2');
+				var a = document.createElement('a');
+				h2.innerText = '标题';
+				a.href = "##";
+				a.innerText ='5';				list.appendChild(li);
+				li.appendChild(h2);
+				li.appendChild(a);
+			}
+			list.onclick = function(e){
+				if(e.target.nodeName == 'A'){
+					list.removeChild(e.target.parentElement);
+				}
+			}
+		</script>
+	</body>
+</html>

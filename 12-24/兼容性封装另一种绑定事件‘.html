@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button id="btn">按钮</button>
+
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			//			btn.addEventListener()
+			addEvent(btn, 'click', function(){alert(1);});
+
+			function addEvent(obj, type, fn) {
+				if(obj.addEventListener) {
+					return obj.addEventListener(type, fn, false);
+				} else {
+					return obj.attachEvent('on' + type, fn);
+				}
+			}
+		</script>
+	</body>
+
+</html>
