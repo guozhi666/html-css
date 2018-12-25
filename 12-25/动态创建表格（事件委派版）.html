@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			.box{
+				width: 320px;
+				/*height: 210px;*/
+				/*background: pink;*/
+				margin: 100px auto 0;
+			}
+			.btn{
+				height: 30px;
+				width: 100px;
+				/*margin-bottom: 5px;*/
+			}
+			table{
+				width: 300px;
+				border: 1px solid #ccc;
+				border-spacing: 0;
+				border-collapse: collapse;
+			}
+			th,td{
+				border: 1px solid #ccc;
+				text-align: center;
+				padding: 5px 0;
+			}
+			.cover{
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: none;
+			}
+			.dialog{
+				width: 430px;
+				height: 250px;
+				background: #fff;
+				position: absolute;
+				left: 50%;
+				margin-left: -215px;
+				top: 150px;
+				display: none;
+			}
+			h3{
+				text-align: center;
+				background: #eee;
+				padding: 3px 0;
+			}
+			span{
+				position: absolute;
+				right: 10px;
+				top: 3px;
+			}
+			.dialog div{
+				padding: 15px 0 0 20px;
+			}
+			input{
+				width: 300px;
+				height: 30px;
+				border-radius: 5px;
+				border: 1px solid #ccc;
+			}
+			.complete{
+				width: 100px;
+				height: 30px;
+				display: block;
+				margin: 20px auto 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<button class="btn" id="btn">添加按钮</button>
+			<table>
+				<thead>
+					<tr>
+						<th>电影名称</th>
+						<th>领衔主演</th>
+						<th>已看过</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+					<tr>
+						<td>海王</td>
+						<td>老李</td>
+						<td>
+							<a href="##">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>毒液</td>
+						<td>漫威</td>
+						<td><a href="##">删除</a></td>
+					</tr>
+					<tr>
+						<td>龙猫</td>
+						<td>宫崎骏</td>
+						<td>
+							<a href="##">删除</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="cover" class="cover"></div>
+		<div class="dialog" id="dialog">
+			<h3>添加数据</h3>
+			<span>X</span>
+			<div>
+				<label for="txt1">电影名称</label>
+				<input type="text" id="txt1" placeholder="请输入电影名称"/>
+			</div>
+			<div>
+				<label for="txt2">领衔主演</label>
+				<input type="text" id="txt2" placeholder="请输入主演名字"/>
+			</div>
+			<button class="complete" id="complete">完成添加</button>
+		</div>
+		
+	</body>
+</html>

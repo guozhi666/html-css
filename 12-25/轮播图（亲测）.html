@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.box {
+				width: 900px;
+				height: 350px;
+				margin: 100px auto 0;
+				/*overflow: hidden;*/
+				background: pink;
+				position: relative;
+			}
+			
+			.box .ulList {
+				width: 5400px;
+				position: absolute;
+				left: 0;
+				right: 0;
+			}
+			
+			.box .ulList li {
+				float: left;
+			}
+			
+			img {
+				display: block;
+			}
+			
+			.leftBtn,
+			.rightBtn {
+				display: block;
+				width: 40px;
+				height: 100px;
+				background: url(imgs/index.png) no-repeat 0 0;
+				position: absolute;
+				top: 50%;
+				margin-top: -50px;
+			}
+			
+			.leftBtn {
+				left: 0;
+			}
+			
+			.rightBtn {
+				right: 0;
+				background-position: -50px 0;
+			}
+			
+			.olList {
+				position: absolute;
+				right: 50px;
+				bottom: 30px;
+			}
+			
+			.olList li {
+				float: left;
+				cursor: pointer;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				border-radius: 50%;
+				background: #ccc;
+				margin-right: 15px;
+			}
+			
+			.current {
+				color: #f40;
+				border-color: #f40;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box" id="box">
+			<ul class="ulList" id="ulList">
+				<li><img src="imgs/01.jpg" alt="" /></li>
+				<li><img src="imgs/02.jpg" alt="" /></li>
+				<li><img src="imgs/03.jpg" alt="" /></li>
+				<li><img src="imgs/04.jpg" alt="" /></li>
+				<li><img src="imgs/05.jpg" alt="" /></li>
+			</ul>
+			<a href="##" class="leftBtn" id="leftBtn"></a>
+			<a href="##" class="rightBtn" id="rightBtn"></a>
+			<ol class="olList" id="olList">
+				<li class="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+		</div>
+
+		<script type="text/javascript">
+			var olList = document.getElementById('olList');
+			var rightBtn = document.getElementById('rightBtn');
+			var ulList = document.getElementById('ulList');
+			var leftBtn = document.getElementById('leftBtn');
+			var cloneLi = ulList.firstElementChild.cloneNode(true);
+			ulList.appendChild(cloneLi);
+			var box = document.getElementById('box')
+			//小圆点排他操作
+			var timer = 0;
+			var olNum = 0;
+			var ulNum = 0;
+			for(var i = 0; i < olList.children.length; i++) {
+				olList.children[i].onclick = function() {
+					for(var i = 0; i < olList.children.length; i++) {
+						olList.children[i].className = '';
+					}
+					this.className = 'current';
+				}
+			}
+			//绑定右移按钮
+			rightBtn.onclick = function() {
+				//				alert('测试')
+				olNum++;
+				if(olNum > 4) {
+					olNum = 0;
+					//					ulList.style.left = 0;
+				}
+				ulNum++;
+				if(ulNum > 5) {
+					ulNum = 1;
+					ulList.style.left = 0;
+				}
+				move();
+				//				ulList.style.left = '-900px';
+			};
+			//绑定左移按钮
+			leftBtn.onclick = function() {
+				//				alert('测试')
+				olNum--;
+				if(olNum < 0) {
+					olNum = 4;
+					//					ulList.style.left = 0;
+				}
+				ulNum--;
+				if(ulNum < 0) {
+					ulNum = 4;
+					ulList.style.left = '-4500px';
+				}
+				move();
+				//				ulList.style.left = '-900px';
+			};
+			//给小圆点绑定点击事件
+			for(var i = 0; i < olList.children.length; i++) {
+				olList.children[i].num = i;
+				olList.children[i].onclick = function() {
+					for(var i = 0; i < olList.children.length; i++) {
+						olList.children[i].className = '';
+					}
+					this.className = 'current';
+					var move = this.num * -900;
+					animate(ulList, move);
+					olNum = this.num;
+					ulNum = this.num;
+				}
+			}
+
+			function move() {
+				for(var i = 0; i < olList.children.length; i++) {
+					olList.children[i].className = ''
+				}
+				olList.children[olNum].className = 'current';
+				var move = ulNum * -900;
+				animate(ulList, move);
+			}
+
+			function animate(obj, target) {
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function() {
+					var step = 30;
+					var current = obj.offsetLeft;
+					step = current <= target ? step : -step;
+					if(Math.abs(target - current) > Math.abs(step)) {
+						current += step;
+						obj.style.left = current + 'px';
+					} else {
+						clearInterval(obj.timer);
+						obj.style.left = target + 'px';
+					}
+				}, 10);
+			}
+
+			timer = setInterval(function() {
+				olNum++;
+				if(olNum > 4) {
+					olNum = 0;
+					//					ulList.style.left = 0;
+				}
+				ulNum++;
+				if(ulNum > 5) {
+					ulNum = 1;
+					ulList.style.left = 0;
+				}
+				for(var i = 0; i < olList.children.length; i++) {
+					olList.children[i].className = ''
+				}
+				olList.children[olNum].className = 'current';
+				var move = ulNum * -900;
+				animate(ulList, move);
+			}, 1000);
+
+			box.onmouseover = function() {
+				clearInterval(timer);
+			}
+			box.onmouseout = function() {
+				timer = setInterval(function() {
+					olNum++;
+					if(olNum > 4) {
+						olNum = 0;
+						//					ulList.style.left = 0;
+					}
+					ulNum++;
+					if(ulNum > 5) {
+						ulNum = 1;
+						ulList.style.left = 0;
+					}
+					for(var i = 0; i < olList.children.length; i++) {
+						olList.children[i].className = ''
+					}
+					olList.children[olNum].className = 'current';
+					var move = ulNum * -900;
+					animate(ulList, move);
+				}, 1000);
+			}
+		</script>
+	</body>
+
+</html>

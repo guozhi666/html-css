@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.box {
+				width: 900px;
+				height: 350px;
+				margin: 100px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.box ul {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 5400px;
+			}
+			
+			.box ul li {
+				float: left;
+			}
+			
+			.box ol {
+				position: absolute;
+				right: 10px;
+				bottom: 10px;
+			}
+			
+			.box ol li {
+				float: left;
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				border: 1px solid #fff;
+				background: #333;
+				color: #999;
+				text-align: center;
+				margin-left: 10px;
+				cursor: pointer;
+				border-radius: 50%;
+			}
+			/*指定标签选择器*/
+			
+			.box ol li.current {
+				border-color: #f60;
+				color: #f60;
+			}
+			
+			.box .leftBtn,
+			.box .rightBtn {
+				width: 40px;
+				height: 100px;
+				background: url(imgs/index.png) 0 0;
+				position: absolute;
+				top: 50%;
+				margin-top: -50px;
+			}
+			
+			.box .leftBtn {
+				left: 0;
+			}
+			
+			.box .rightBtn {
+				right: 0;
+				background-position: -50px 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box" id="box">
+			<ul id="ulList">
+				<li><img src="imgs/01.jpg" height="350" width="900" alt="" /></li>
+				<li><img src="imgs/02.jpg" height="350" width="900" alt="" /></li>
+				<li><img src="imgs/03.jpg" height="350" width="900" alt="" /></li>
+				<li><img src="imgs/04.jpg" height="350" width="900" alt="" /></li>
+				<li><img src="imgs/05.jpg" height="350" width="900" alt="" /></li>
+				<li><img src="imgs/01.jpg" height="350" width="900" alt="" /></li>
+			</ul>
+			<ol id="olList">
+				<li class="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<!--	<p class="current">6</p>-->
+			</ol>
+			<a href="##" class="leftBtn" id="leftBtn"></a>
+			<a href="##" class="rightBtn" id="rightBtn"></a>
+		</div>
+		<script type="text/javascript">
+			var olList = document.getElementById('olList');
+			var rightBtn = document.getElementById('rightBtn');
+			var leftBtn = document.getElementById('leftBtn');
+			var ulList = document.getElementById('ulList');
+			var box = document.getElementById('box');
+			var olnum = 0;
+			var ulnum = 0;
+			var timer = 0;
+			//向右滚动，单击右按钮
+
+			rightBtn.onclick = function() {
+				olnum++;
+				if(olnum > 4) {
+					olnum = 0;
+				}
+				ulnum++;
+				if(ulnum > 5) {
+					ulnum = 1;
+					ulList.style.left = 0;
+				}
+				for(var i = 0; i < olList.children.length; i++) {
+					olList.children[i].className = '';
+				}
+				olList.children[olnum].className = 'current';
+
+				animate(ulList, ulnum * -900);
+			}
+			//单机左按钮
+			leftBtn.onclick = function() {
+				olnum--;
+				if(olnum < 0) {
+					olnum = 4;
+
+				}
+				ulnum--;
+				if(ulnum < 0) {
+					ulnum = 4;
+					ulList.style.left = '-4500px';
+				}
+				for(var i = 0; i < olList.children.length; i++) {
+					olList.children[i].className = '';
+				}
+				olList.children[olnum].className = 'current';
+
+				animate(ulList, ulnum * -900);
+			}
+			//给所有小圆点绑定单击事件
+			for(var i = 0; i < olList.children.length; i++) {
+				olList.children[i].num = i;
+				olList.children[i].onclick = function() {
+					for(var i = 0; i < olList.children.length; i++) {
+						olList.children[i].className = '';
+					}
+					this.className = 'current';
+					var move = this.num * -900;
+					animate(ulList, move);
+					olnum = this.num;
+					ulnum = this.num;
+				}
+			}
+
+			function animate(obj, target) {
+				//开启之前先关闭
+				clearInterval(obj.timer);
+				//开启定时器
+				obj.timer = setInterval(function() {
+					//步数
+					var step = 30;
+					//当前位置
+					var current = obj.offsetLeft;
+					/*
+					 * 当当前值小于目标值的时候,步数是正值,反之是负值
+					 */
+					step = current <= target ? step : -step;
+					//当目标值-当前值的绝对值大于步数的绝对值时,表示里目标距离还很远,
+					//所以继续进行值的设置
+					if(Math.abs(target - current) > Math.abs(step)) {
+						current += step;
+						obj.style.left = current + 'px';
+					} else { //表示已经接近目标值,一次性设置到目标值
+						clearInterval(obj.timer);
+						//当能进到else条件,表示已经接近目标值了,认为的设置到目标值
+						obj.style.left = target + 'px';
+					}
+				}, 10);
+			}
+
+			timer = setInterval(function() {
+
+				olnum++;
+				if(olnum > 4) {
+					olnum = 0;
+				}
+				ulnum++;
+				if(ulnum > 5) {
+					ulnum = 1;
+					ulList.style.left = 0;
+				}
+				for(var i = 0; i < olList.children.length; i++) {
+					olList.children[i].className = '';
+				}
+				olList.children[olnum].className = 'current';
+
+				animate(ulList, ulnum * -900);
+
+			}, 2000);
+			box.onmouseover = function() {
+				clearInterval(timer);
+			}
+			box.onmouseout = function() {
+				timer = setInterval(function() {
+
+					olnum++;
+					if(olnum > 4) {
+						olnum = 0;
+					}
+					ulnum++;
+					if(ulnum > 5) {
+						ulnum = 1;
+						ulList.style.left = 0;
+					}
+					for(var i = 0; i < olList.children.length; i++) {
+						olList.children[i].className = '';
+					}
+					olList.children[olnum].className = 'current';
+
+					animate(ulList, ulnum * -900);
+
+				}, 2000);
+			}
+		</script>
+	</body>
+
+</html>
