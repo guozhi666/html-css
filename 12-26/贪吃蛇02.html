@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//地图类
+			(function() {
+				function Map(width, height, bgColor) {
+					this.width = width;
+					this.height = height;
+					this.bgColor = bgColor;
+				}
+				Map.prototype.init = function() {
+					//创建div属性
+					var divMap = document.createElement('div');
+					//设置div样式
+					divMap.style.width = this.width + 'px';
+					divMap.style.height = this.height + 'px';
+					divMap.style.backgroundColor = this.bgColor;
+					divMap.style.margin = '100px auto 0';
+					divMap.style.position = 'relative';
+					divMap.id = 'mapID';
+					//添加div属性
+					document.body.appendChild(divMap);
+				}
+				window.Map = Map;
+			}());
+			//食物类
+			(function() {
+				function Food(width, height, bgColor) {
+					this.width = width;
+					this.height = height;
+					this.bgColor = bgColor;
+					this.x = 0;
+					this.y = 0
+				}
+				Food.prototype.init = function() {
+					var divMap = document.getElementById('mapID')
+					//创建div标签
+					var divFood = document.createElement('div');
+					//设置div样式
+					this.x = parseInt(Math.random() * (divMap.offsetWidth / this.width));
+					this.y = parseInt(Math.random() * (divMap.offsetHeight / this.height));
+					divFood.style.width = this.width + 'px';
+					divFood.style.height = this.height + 'px';
+					divFood.style.backgroundColor = this.bgColor;
+					divFood.style.position = 'absolute'
+					divFood.style.left = this.width * this.x + 'px';
+					divFood.style.top = this.height * this.y + 'px';
+					//把div添加到map
+					divMap.appendChild(divFood);
+				}
+				window.Food = Food;
+			}());
+			//蛇类
+			(function() {
+				function Snake(width, height, dir) {
+					this.width = width;
+					this.height = height;
+					this.dir = dir;
+					this.snBody = [{
+						x: 3,
+						y: 2,
+						bgColor:'red'
+					}, {
+						x: 2,
+						y: 2,
+						bgColor:'orange'
+					}, {
+						x: 1,
+						y: 2,
+						bgColor:'orange'
+					}]
+				}
+				Snake.prototype.init = function(){
+					var divMap = document.getElementById('mapID');
+					//循环获取蛇身的每一节
+					for (var i = 0; i < this.snBody.length; i++) {
+						var divSnake = document.createElement('div');
+						divSnake.style.width = this.width + 'px';
+						divSnake.style.height = this.height + 'px';
+						divSnake.style.position = 'absolute';
+						divSnake.style.backgroundColor = this.snBody[i].bgColor;
+						divSnake.style.left = this.width * this.snBody[i].x + 'px';
+						divSnake.style.top = this.height * this.snBody[i].y + 'px';
+						divMap.appendChild(divSnake);
+					}
+				}
+				Snake.prototype.move = function(){
+					for(var i = this.snBody.length -1 ; i>=1; i--){
+						this.snBody[i].x = this.snBody[i-1].x;
+						this.snBody[i].y = this.snBody[i-1].y;
+					}
+					this.snBody[0].x+=1;
+				}
+				window.Snake = Snake;
+			}());
+
+			var map = new Map(600, 500, '#ccc');
+			map.init();
+
+			var food = new Food(20, 20, 'green');
+			food.init();
+			var snake = new Snake(20, 20, 'right');
+			setInterval(function(){
+				snake.init();
+			snake.move();
+			snake.init();
+			}, 500);
+		</script>
+	</body>
+
+</html>

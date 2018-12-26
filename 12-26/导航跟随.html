@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.header {
+				width: 100%;
+				height: 100px;
+				background: #ccc;
+			}
+			
+			.nav {
+				width: 100%;
+				height: 50px;
+				background: red;
+			}
+			
+			.main {
+				width: 1200px;
+				height: 300px;
+				background: blue;
+				margin: 10px auto 0;
+			}
+			
+			.pof {
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header" id="header"></div>
+		<div class="nav" id="nav"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<div class="main"></div>
+		<script type="text/javascript">
+			var nav = document.getElementById('nav');
+			var header = document.getElementById('header');
+			
+			window.onscroll = function(){
+				if(scroll().top >= header.offsetHeight){
+					nav.className = 'nav pof';
+				}else{
+					nav.className = 'nav';
+				}
+			}
+			function scroll(){
+				return{
+					left:window.scrollLeft || document.documentElement.scrollLeft || document.body.scrollLeft,
+					top:window.scrollTop || document.documentElement.scrollTop || document.body.scrollTop
+				}
+			}
+		</script>
+	</body>
+</html>

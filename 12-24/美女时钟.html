@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="" alt="" id="imgBig" />
+		
+		<script type="text/javascript">
+			var imgBig = document.getElementById('imgBig');
+			var timer = 0;
+			fn();
+			timer = setInterval(fn, 1000);
+			
+			function fn(){
+				var myDate = new Date();
+				
+				var hours = myDate.getHours()<10 ? '0'+ myDate.getHours() : myDate.getHours();
+				var seconds = myDate.getSeconds()< 10 ? '0'+ myDate.getSeconds() : myDate.getSeconds();
+				console.log(seconds);
+			}
+		</script>
+	</body>
+</html>

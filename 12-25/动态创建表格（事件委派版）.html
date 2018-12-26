@@ -59,6 +59,7 @@
 				position: absolute;
 				right: 10px;
 				top: 3px;
+				cursor: pointer;
 			}
 			.dialog div{
 				padding: 15px 0 0 20px;
@@ -114,7 +115,7 @@
 		<div id="cover" class="cover"></div>
 		<div class="dialog" id="dialog">
 			<h3>添加数据</h3>
-			<span>X</span>
+			<span id="close" class="close">X</span>
 			<div>
 				<label for="txt1">电影名称</label>
 				<input type="text" id="txt1" placeholder="请输入电影名称"/>
@@ -126,5 +127,62 @@
 			<button class="complete" id="complete">完成添加</button>
 		</div>
 		
+		<script type="text/javascript">
+			var tbody = document.getElementById('tbody');
+			var btn = document.getElementById('btn');
+			var cover = document.getElementById('cover');
+			var dialog = document.getElementById('dialog');
+			var txt1 = document.getElementById('txt1');
+			var txt2 = document.getElementById('txt2');
+			var close = document.getElementById('close');
+			var complete = document.getElementById('complete');
+			
+			//给ybody添加单击事件
+			//事件委派
+			tbody.onclick = function(e){
+				if(e.target.nodeName == 'A'){
+					tbody.removeChild(e.target.parentNode.parentNode);
+				}
+			}
+			//单击添加数据
+			btn.onclick = function(){
+				cover.style.display = 'block';
+				dialog.style.display = 'block';
+			}
+			//单机完成按钮
+			complete.onclick = function(){
+				var txt1Str = txt1.value.trim();
+				var txt2Str = txt2.value.trim();
+				if(txt1Str && txt2Str){
+					cover.style.display = 'none';
+					dialog.style.display = 'none';
+					//创建tr
+					var tr = document.createElement('tr');
+					tbody.appendChild(tr);
+					for (var i = 0; i < 3; i++) {
+						var td = document.createElement('td');
+						tr.appendChild(td);
+						if(i == 0){
+							td.innerText = txt1Str;
+						}else if(i == 1){
+							td.innerText = txt2Str;
+						}else{
+							var a = document.createElement('a');
+							a.href = '##';
+							a.innerText = '删除';
+							td.appendChild(a);
+						}
+					}
+					txt1.value = '';
+					txt2.value = '';
+				}else(
+					alert('电影名称和演员不能为空')
+				)
+			}
+			close.onclick = function(){
+				cover.style.display = 'none';
+				dialog.style.display ='none';
+			}
+		</script>
 	</body>
 </html>
