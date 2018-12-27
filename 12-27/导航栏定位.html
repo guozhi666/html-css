@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.top{
+				width: 1090px;
+				height: 200px;
+				background: #000000;
+				margin: 0 auto;
+			}
+			.nav{
+				width: 1090px;
+				height: 50px;
+				background: red;
+				/*overflow: auto;*/
+				margin: 0 auto ;
+			}
+			.center{
+				width: 1090px;
+				height: 300px;
+				background: green;
+				margin: 5px auto 0;
+			}
+			.pof{
+				position: fixed;
+				left: 50%;
+				margin-left:-545px ;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div class="box">-->
+			<div class="top" id="top"></div>
+			<div class="nav" id="nav"></div>
+			<div class="center"></div>
+			<div class="center"></div>
+			<div class="center"></div>
+			<div class="center"></div>
+			<div class="center"></div>
+			<div class="center"></div>
+		<!--</div>-->
+		<script type="text/javascript">
+			var tops = document.getElementById('top');
+			var nav = document.getElementById('nav');
+			
+			window.onscroll = function(){
+				if(scroll().top >= tops.offsetHeight){
+					nav.className = 'nav pof';
+				}else{
+					nav.className = 'nav';
+				}
+			}
+			function scroll(){
+				return {
+//					top: window.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+//					left: window.scrollLeft || document.documentElement.scrollLeft || document.body.scrollLeft;
+					left: window.scrollLeft || document.documentElement.scrollLeft || document.body.scrollLeft,
+					top: window.scrollTop || document.documentElement.scrollTop || document.body.scrollTop
+				};
+			}
+		</script>
+	</body>
+</html>

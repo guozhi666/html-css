@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div style="text-align: center;">
+			<button id="btn1">播放/暂停</button>
+			<button id="btn2">大</button>
+			<button id="btn3">中</button>
+			<button id="btn4">小</button><br>
+			<!--<video src="" id="video1" width: '420' style="margin-top:20px;">
+				<source src="/videos/move_bbb.mp4" type="video/mp4" />
+				<source src="/videos/move_bbb.ogg" type="video/ogg" /> 你的浏览器不支持HTML5的 video属性。
+			</video>-->
+			<video id="video1" width="420" style="margin-top:15px;">
+				<source src="/videos/mov_bbb.mp4" type="video/mp4" />
+				<source src="/videos/mov_bbb.ogg" type="video/ogg" /> Your browser does not support HTML5 video.
+			</video>
+		</div>
+		<script>
+			var myVideo = document.getElementById('video1');
+			var btn1 = document.getElementById('btn1');
+			var btn2 = document.getElementById('btn2');
+			var btn3 = document.getElementById('btn3');
+			var btn4 = document.getElementById('btn4');
+
+			btn1.onclick = function() {
+				if(myVideo.paused) {
+					myVideo.play();
+				} else {
+					myVideo.pause();
+				}
+			}
+			btn2.onclick = function() {
+				myVideo.width = 560;
+			}
+			btn3.onclick = function() {
+				myVideo.width = 420;
+			}
+			btn4.onclick = function() {
+				myVideo.width = 320;
+			}
+		</script>
+	</body>
+
+</html>

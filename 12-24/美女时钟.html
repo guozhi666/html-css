@@ -6,7 +6,6 @@
 	</head>
 	<body>
 		<img src="" alt="" id="imgBig" />
-		
 		<script type="text/javascript">
 			var imgBig = document.getElementById('imgBig');
 			var timer = 0;
@@ -19,7 +18,10 @@
 				var hours = myDate.getHours()<10 ? '0'+ myDate.getHours() : myDate.getHours();
 				var seconds = myDate.getSeconds()< 10 ? '0'+ myDate.getSeconds() : myDate.getSeconds();
 				console.log(seconds);
+				var srcImg = 'meimei/' + hours + '_' + seconds + '.jpg';
+				imgBig.src = srcImg;
 			}
+			
 		</script>
 	</body>
 </html>

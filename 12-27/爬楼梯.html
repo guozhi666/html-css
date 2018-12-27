@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <script src="">
+        function floats(n){
+            if(n == 1){
+                return 1;
+            }
+            if(n == 2){
+                return 2;
+            }
+            var sum = floats(n-1) + floats(n-2);
+            return sum;
+        }
+        console.log(floats(3));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
