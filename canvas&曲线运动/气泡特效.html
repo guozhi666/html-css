@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>气泡效果1</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: grey;
+        }
+        #myCanvas{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400"></canvas>
+
+</body>
+<script type="text/javascript">
+    var myCanvas = document.getElementById('myCanvas');
+    var painting = myCanvas.getContext('2d');
+    arr = [];
+
+    //每隔一段时间，把圆添加到画布上
+    setInterval(function () {
+        //清除画布
+        painting.clearRect(0, 0, myCanvas.width, myCanvas.height);
+        console.log(arr);
+        //加工圆
+        for(var j = 0; j<arr.length; j++){
+            var item = arr[j];
+            item.deg++;
+            // item.r++;
+            // item.a -=0.01;
+            item.x = item.startX + Math.sin(item.deg*Math.PI/180)*item.pathScale;
+            item.y = item.startY - (item.deg*Math.PI/180)*item.pathScale;
+            if(item.y + item.r< 0){
+                arr.splice(j, 1);
+            }
+        }
+
+        //使用圆
+        for(var i = 0; i<arr.length; i++){
+            var item = arr[i];
+            this.index = i;
+            painting.beginPath();
+            painting.arc(item.x, item.y, item.r, 0, Math.PI*2);
+            painting.fillStyle = 'rgba('+  item.red +','+ item.green +','+ item.blue +','+ item.a +')';
+            painting.fill();
+        }
+    },16);
+
+    //创造圆的工厂
+    setInterval(function () {
+        var obj = {};
+        obj.r = Math.floor(Math.random()*7+ 5) ;
+        // obj.r = 10;
+        // obj.x = Math.floor(Math.random()*myCanvas.width);
+        obj.y = myCanvas.width + obj.r/2;
+        obj.x = Math.floor(Math.random()*myCanvas.height);
+        obj.red = Math.floor(Math.random()*255);
+        obj.green = Math.floor(Math.random()*255);
+        obj.blue = Math.floor(Math.random()*255);
+        // obj.a = Math.random();
+        obj.a = 1;
+        arr.push(obj);
+
+        //曲线运动需要的属性
+        obj.startX = obj.x;
+        obj.startY = obj.y;
+        obj.deg = 0;
+        obj.pathScale = Math.floor(Math.random()*80 + 20);
+
+    },50)
+
+</script>
+</html>

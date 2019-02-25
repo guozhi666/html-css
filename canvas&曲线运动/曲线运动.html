@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #brush{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            background-color: orange;
+            width: 10px;
+            height: 10px;
+        }
+        .box{
+            position: absolute;
+            background-color: black;
+            width: 4px;
+            height: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="brush"></div>
+
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        var brush = document.getElementById('brush');
+        var brushLeft = brush.offsetLeft;
+        var brushTop = brush.offsetTop;
+        var deg  = 0;
+
+        setInterval(function () {
+            deg++;
+            //角度转换为弧度
+            brush.style.left = brushLeft + (deg*Math.PI/180)*50 + 'px';
+            brush.style.top = brushTop + Math.sin(deg*Math.PI/180)*200 + 'px';
+
+            var box = document.createElement('div');
+            box.className = 'box';
+            box.style.left = brush.offsetLeft + 'px';
+            box.style.top = brush.offsetTop + 'px';
+            document.body.appendChild(box);
+
+        },16)
+    }
+</script>
+</html>
